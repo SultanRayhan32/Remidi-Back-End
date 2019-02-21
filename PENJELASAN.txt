@@ -1,0 +1,61 @@
+  A)	pada folder Controllers file KamarControllers :
+	1. pada page 19 function AddKamar cara menggunakannya melalui req.body
+	   digunakan untuk menambah kamar baru
+   	cara menggunakannya seperti ini :
+		axiox.post('localhost:2017/kamar/AddKamar',{
+	nomorkamar : nomorkamar2 ,
+categoryid : categoryid2 ,
+harga : harga2 
+})
+		nomorkamar2 berdasarkan value refs input yang akan anda buat, diambil melalu contoh : var nomorkamar2 = this.refs.nomorkkamar.value
+	2.pada page 30 funtion EditKamar cara menggunakannya melalui req.boy
+	  digunakan untuk meng edit kamar
+	cara menggunakannya seperti ini :
+		axiox.put('localhost:2017/kamar/EditKamar',{
+ id : id2 ,nomorkamar : nomorkamar2 ,
+categoryid : categoryid2 ,
+harga : harga2 
+})
+		var id2 berdasarkan id kamar mana yang ingin anda edit.
+	3. pada page 41 DeleteKamar cara menggunakannya melalui req.query
+	   digunakan untuk menghapus kamar
+	   cara menggunakannya : axios.delete(`localhost:2017/kamar/DeleteKamar?id=${idKamar}`)
+	   variabel idKamar itu sesuai dengan idkamar mana yang ingin anda hapus
+	4. pada page 51 FilterKamar  digunakan untuk memfilter data yang anda inginkan berdasarkan kategori
+	   Pemfilterannya berdasarkan huruf depan
+	   cara menggunakannya melalui req.query seperti ini axios.get(`http://localhost:2017/kamar/filter1?filter=${DI ISI DENGAN VARIABEL untuk memfilter}`);
+	   anda dapat memfilter berdasarkan nama kategori 
+	5. pada page 12 digunakan untuk melihat semua kamar yang ada
+	
+
+  B) pada folder Controllers file KategoriControllers : 
+     1. pada page 18 digunakan untuk menambah kategori baru 
+	
+	melalui req.body
+	cara menggunakannya axios.post(`localhost:2017/kategori/AddKategori`,	{
+kategoribaru : DI ISI DENGAN VARIABLE ANDA  })
+     2.	 pada page 25 digunakan untuk edit/update kategori , melalui req.body
+	cara menggunakannya axios.put(`localhost:2017/kategori/EditKategori`),{
+	"id" : BERDASARKAN KATEGORI MANA YANG INGIN ANDA EDIT(id),
+	
+										"kategori" : DARI VARIABLE UNTUK MENG EDIT YANG BARU
+})	
+     3. pada page digunakan untuk menghapus kategori 
+	MELALUI REQ.QUERY
+	cara menggunakannya axios.delete(`localhost:2017/kategori/DeleteKategori?id=BERDASARKAN ID KATEGORI YANG INGIN ANDA HAPUS`);
+     
+  C) pada folder Controllers file AuthControllers :
+     1. pada page 12 digunakan untuk login berdasarka username dan password , untuk nge check apakah ada username sekian dan password sekian di database
+	cara menggunakanya axios.get(`http://localhost:2017/Auth/Login?username=BERDASARKAN VARIABEL INPUT USERNAME
+									&password=BERDASARKAN VARIABEL INPUT PASSWORD`)	
+					lalu jika username sekian dan password sekian ada langsung melakukan login , jika tidak ada maka tidak jadi login
+     2. pada page 27 digunakan untuk menambah user baru melalui req.body , cara nya hampir sama dengan input kategori dan kamar
+	axios.post(`http://localhost:2017/Auth/AddUser`,{
+"username" : VARIABEL INPUT USER ,
+	"email" : VARIABEL INPUT EMAIL,
+	"password" : VARIABEL INPUT PASSWORD
+}
+)	
+
+
+
